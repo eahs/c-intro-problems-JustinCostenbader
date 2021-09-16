@@ -45,18 +45,43 @@ namespace VowelShifter
                 // Let's grab one character from the input at index i
                 char current = input[i];
                 
-                // Turn any 'e' to a '3'
-                if (current == 'e')
+                // Change lowercase
+                if (current == 'a')
                 {
-                    current = '3';
+                    current = 'e';
+                } else if (current == 'e')
+                {
+                    current = 'i';
+                } else if (current == 'i')
+                {
+                    current = 'o';
+                } else if (current == 'o')
+                {
+                    current = 'u';
+                } else if (current == 'u')
+                {
+                    current = 'a';
                 }
                 
-                // Make every other letter uppercase
-                if (i % 2 == 0)
+                // Change uppercase
+                if (current == 'A')
                 {
-                    current = Char.ToUpper(current);
+                    current = 'E';
+                } else if (current == 'E')
+                {
+                    current = 'I';
+                } else if (current == 'I')
+                {
+                    current = 'O';
+                } else if (current == 'O')
+                {
+                    current = 'U';
+                } else if (current == 'U')
+                {
+                    current = 'A';
                 }
                 
+                // Output
                 output += current;
             }
             

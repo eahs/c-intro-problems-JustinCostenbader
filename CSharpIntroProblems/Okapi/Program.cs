@@ -31,7 +31,8 @@ namespace Okapi
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter two numbers: ");
+            int payout = 0;
+            Console.Write("Enter Dice Rolls: ");
             
             // This is Linq.  Linq can make your life pretty easy
             var nums = Console.ReadLine() // Read a string from the user
@@ -39,7 +40,19 @@ namespace Okapi
                 .Select(n => Convert.ToInt32(n)) // Select each string and convert it to an integer
                 .ToList(); // Now turn the integer collection into a List
             
-            Console.WriteLine($"You entered {nums[0]} and {nums[1]}");
+            if (nums[0] == nums[1] && nums[0] == nums[2])
+            {
+                payout = nums[0] + nums[1] + nums[2];
+            } else if (nums[0] == nums[1] && nums[0] != nums[2])
+            {
+                payout = nums[0] + nums[1];
+            } else if (nums[0] != nums[1] && nums[0] == nums[2])
+            {
+                payout = nums[0] + nums[2];
+            }
+            
+            // Output
+            Console.WriteLine("The payout is $" + payout);
             
         }
     }
